@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>For Diya, With Love</title>
   <style>
     body {
@@ -31,30 +31,55 @@
       cursor: pointer;
     }
     #message {
-      margin-top: 30px;
+      margin-top: 20px;
       font-size: 1.4em;
       color: #333;
       max-width: 90%;
+    }
+    #photo {
+      margin-top: 20px;
+      max-width: 90%;
+      border-radius: 12px;
+      display: none;
     }
   </style>
 </head>
 <body>
   <h1>For Diya, With Love</h1>
   <button onclick="showMessage()">Tap here</button>
+  <img id="photo" src="" alt="photo" />
   <div id="message"></div>
 
   <script>
     const messages = [
-      "I love your smile and how your eyes light up when you tell me about your day, babe.",
-      "Your laughter at night in bed is my favorite thing to end the day!",
-      "My home is when you are with me, no matter how things are in life.",
-      "The way you care for Cooper makes me fall in love with you all over again.",
-      "You make ordinary moments feel extraordinary."
+      {
+        text: "I love your smile and how your eyes light up when you tell me about your day, babe.",
+        image: "images/smile1.jpg"
+      },
+      {
+        text: "Your laughter at night in bed is my favorite thing to end the day!",
+        image: "images/smile2.jpg"
+      },
+      {
+        text: "My home is when you are with me, no matter how things are in life.",
+        image: "images/smile3.jpg"
+      },
+      {
+        text: "The way you care for Cooper makes me fall in love with you all over again.",
+        image: "images/smile4.jpg"
+      }
     ];
 
     function showMessage() {
-      const message = messages[Math.floor(Math.random() * messages.length)];
-      document.getElementById('message').textContent = message;
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('message').textContent = msg.text;
+      const photo = document.getElementById('photo');
+      if (msg.image) {
+        photo.src = msg.image;
+        photo.style.display = 'block';
+      } else {
+        photo.style.display = 'none';
+      }
     }
   </script>
 </body>
