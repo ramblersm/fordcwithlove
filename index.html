@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For Diya, With Love</title>
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff0f5;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 12px 24px;
+      border: none;
+      background-color: #d63384;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 1.4em;
+      color: #333;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <h1>For Diya, With Love</h1>
+  <button onclick="showMessage()">Tap here</button>
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "I love your smile and how your eyes light up when you tell me about your day, babe.",
+      "Your laughter at night in bed is my favorite thing to end the day!",
+      "My home is when you are with me, no matter how things are in life.",
+      "The way you care for Cooper makes me fall in love with you all over again.",
+      "You make ordinary moments feel extraordinary."
+    ];
+
+    function showMessage() {
+      const message = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('message').textContent = message;
+    }
+  </script>
+</body>
+</html>
